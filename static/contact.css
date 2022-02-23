@@ -1,0 +1,9 @@
+body, html {
+    height: 120%;
+    margin: 0;
+    background-color: azure;
+  }
+ 
+  #head{
+    max-width: 1000px;color: black;padding-bottom: 10px;padding-top: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align: center;
+}

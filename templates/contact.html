@@ -1,0 +1,52 @@
+
+{% extends 'home.html' %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'contact.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+<title>Contact Us</title>
+{% endblock %}
+
+{% block active %}
+<div class="navbar-nav">
+  <a class="nav-item nav-link " href="/">Home <span class="sr-only"></span></a>
+  <a class="nav-item nav-link " href="visual">Visualization</a>
+  <a class="nav-item nav-link active" href="contact">Contact Us</a>
+  
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="display-3 mx-auto" id="head"><strong> Developers Team</strong></h1>
+
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="{% static 'Vinayak.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Vinayak Shrivastava</h5>
+      <p class="card-text">B.Tech CSE 2020-24 <br> IIIT Naya Raipur<br><br><a href="mailto: vinayak20100@iiitnr.edu.in">vinayak20100@iiitnr.edu.in</a><br><br></p>
+      
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{% static 'Tushar.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Tushar Rusia</h5>
+      <p class="card-text">B.Tech ECE 2020-24<br> IIIT Naya Raipur<br><br><a href="mailto: tushar20101@iiitnr.edu.in">tushar20101@iiitnr.edu.in</a><br><br></p>
+      
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{% static 'Amaan.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Amaan Ahmed Kazi</h5>
+      <p class="card-text">B.Tech CSE 2020-24<br> IIIT Naya Raipur<br><br><a href="mailto: amaan20100@iiitnr.edu.in">amaan20100@iiitnr.edu.in</a><br><br></p>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

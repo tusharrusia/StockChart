@@ -1,0 +1,42 @@
+body, html {
+    height: 120%;
+    margin: 0;
+    background-color: azure;
+  }
+ 
+#head{
+    max-width: 1000px;color: black;padding-bottom: 10px;padding-top: 10px;font-family: serif;text-align: center;
+}
+
+#select-form{
+    margin: auto;
+    width: 80%;
+    border: 5px solid black;
+    padding: 10px;
+}
+
+.message {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: red;
+    text-align: center;
+   
+}
+
+#chart{
+    margin: auto;
+    width: 70%;
+    padding: 5px;
+
+
+}
+
+.stock-name {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: black;
+    text-align: center;
+    font-family:fantasy;
+    font-size:2rem;
+   
+}
