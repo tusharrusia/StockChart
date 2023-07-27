@@ -40,36 +40,42 @@ def visual(request):
     if request.method == "POST":
         
         stock_name = request.POST.get('stock_name')
-        interval_ = request.POST.get('interval')
+        stock_interval = interval = request.POST.get('interval')
+        from_date = request.POST.get('from')
+        to_date = request.POST.get('to')
 
         if stock_name == "Select Stock":
             # Generates warning if no stock is selected.
-            return render(request, "visual.html", {"message" : "Please select a stock"})
+            return render(request, "visual.html", {"message" : "Please select a stock !"})
 
-        if interval_ == "Select Interval":
+        if stock_interval == "Select Interval":
             # Generates warning if no interval is selected.
-            return render(request, "visual.html", {"message" : "Please select an interval"})
+            return render(request, "visual.html", {"message" : "Please select an interval !"})
 
 
         tick = yf.Ticker(stock_name) # retrieves all data of the given stock
-
-        data = tick.history(start="2021-01-01", interval=interval_) 
+        info = tick.info['longBusinessSummary']
+        data = tick.history(start=from_date, end=to_date, interval=stock_interval) 
         # A pandas Dataframe containing information of stock's performance in the given time interval.
 
         name = tick.info['longName'] # Retrieves name of the company registered to the corresponding  stock symbol.
 
         candlestick = go.Candlestick(x=data.index, open=data['Open'], high=data['High'], low=data['Low'], close=data['Close']) # A candlestick object is created with the corresponding input.
 
-        fig = go.Figure(data=[candlestick]).update_layout(xaxis_rangeslider_visible=False, yaxis_title='Price(INR)')
+        fig = go.Figure(data=[candlestick]).update_layout(yaxis_title='Price(INR)',margin=dict(l=0,r=0,b=0,t=30))
         # A chart object is created and the data is plotted upon it.
 
 
-        graph = fig.to_html(full_html=False, default_height=600, default_width=850)
+        graph = fig.to_html(full_html=False)
         # The object is then converted to html code for the output in the webpage.
 
         context = {
             'graph': graph,
             'stock': name,
+            'info' : info,
+            'symbol': stock_name,
+            'interval':stock_interval,
+
             "message": "For another visualization, please select a stock",
         }
 

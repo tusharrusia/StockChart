@@ -1,12 +1,4 @@
 body, html {
-    height: 120%;
-    margin: 0;
-    background-color: azure;
-  }
-  
-  
+  background-color: azure;
+}
 
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
